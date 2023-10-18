@@ -60,3 +60,11 @@ mb.RawIO.Write("SCREEN_DUMP\n");
         C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll
         C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL
             
+## History
+
+### HardCopy
+- Tektronix, Lecory
+
+### Save Waveform
+
+- Lecory
