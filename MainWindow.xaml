@@ -1,0 +1,50 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_DSO"
+        xmlns:DSO="clr-namespace:DSO" x:Class="Test_DSO.MainWindow"
+        mc:Ignorable="d"
+        Title="DSO HardCopy" SizeToContent="WidthAndHeight" Topmost="True" Icon="/icons/dso.png">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Devices">
+                <MenuItem Header="Filter">
+                    <ComboBox ItemsSource="{Binding DeviceFilter}" SelectedItem="{Binding SelectedFilter}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Resolution">
+                <MenuItem Header="Width(cm)">
+                    <StackPanel>
+                        <ComboBox ItemsSource="{Binding Resolutions}" SelectedItem="{Binding SelectedResolution}"/>
+                    </StackPanel>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel  DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding RefreshDevicesCommand}" Margin="2,2,2,2">Refresh</Button>
+                <ComboBox ItemsSource="{Binding VisaDeviceNames}" SelectedItem="{Binding SelectedDeviceName}"  Margin="2,2,2,2"/>
+            </StackPanel>
+            <UniformGrid Columns="2">
+                <CheckBox IsChecked="{Binding IsShowImage}">Show Image</CheckBox>
+                <CheckBox IsChecked="{Binding IsInkSaver}">Ink Saver</CheckBox>
+            </UniformGrid>
+            <UniformGrid Columns="2">
+                <CheckBox IsChecked="{Binding IsConvertToExcel}">Convert To Excel</CheckBox>
+                <CheckBox IsChecked="{Binding IsSaveImage}">Save File</CheckBox>
+            </UniformGrid>
+            <DockPanel>
+                <Button DockPanel.Dock="Left" Margin="2,2,2,2" Command="{Binding HardCopyDsoCommand}" Background="{Binding ButtonBackColor}" IsEnabled="{Binding IsButtonEnabled}">Hard Copy</Button>
+                <Button DockPanel.Dock="Left" Margin="2,2,2,2" Command="{Binding ReadWaveFormCommand}">Read Wfm</Button>
+                <ComboBox ItemsSource="{Binding DsoChannels}" SelectedIndex="{Binding SelectedDsoChannelIndex}"></ComboBox>
+                <ProgressBar Value="{Binding ProgressBarValue}" Maximum="{Binding ProgressBarMax}" Margin="2,2,2,2"></ProgressBar>
+            </DockPanel>
+
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom">
+            <TextBlock Text="{Binding StatusText}"></TextBlock>
+        </StackPanel>
+    </DockPanel>
+</Window>
