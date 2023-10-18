@@ -336,6 +336,7 @@ namespace Test_DSO
         {
             if (VisaDevices is null)
                 return null;
+            if (VisaDevices.Count == 0) return null;
 
             try
             {

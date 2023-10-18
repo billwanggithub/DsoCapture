@@ -98,6 +98,15 @@ namespace DSO
         }
         public static MessageBasedSession? OpenDso(ObservableCollection<VisaDevice> devices, string name)
         {
+            if (devices == null)
+            {
+                return null;
+            }
+
+            if (devices.Count == 0)
+            {
+                return null;
+            }
             ResourceManager rm = new();
             string? address = GetVisaAddress(devices, name);
             return (MessageBasedSession)rm.Open(address);
