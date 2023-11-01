@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\VisualStudioHelper\DataHelper.cs" Link="DataHelper.cs" />
+    <Compile Include="..\..\VisualStudioHelper\DsoHelper.cs" Link="DsoHelper.cs" />
+    <Compile Include="..\..\VisualStudioHelper\ExcelHelper.cs" Link="ExcelHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Icons\dso.ico" />
   </ItemGroup>
 
@@ -53,6 +59,10 @@
 
   <ItemGroup>
     <Resource Include="Icons\dso.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\" />
   </ItemGroup>
 
 </Project>

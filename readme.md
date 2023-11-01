@@ -11,6 +11,13 @@ NationalInstruments.Visa.dll
 Ivi.Visa.dll
 ```
 
+## Helper Utility
+
+Copy the folling files in [VisualStudioHelper](https://github.com/billwanggithub/VisualStudioHelper.git)
+- DataHelper.cs
+- DsoHelper.cs
+- ExcelHelper.cs
+
 ## Hard Copy Commands
 
 ### Tektronix MDO4XXX
